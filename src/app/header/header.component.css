@@ -9,10 +9,11 @@
 /* Header Styles */
 .header {
   background-color: #1b1b1b;
-  border-bottom: 1px solid #1b1b1b;
+ 
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1.9px solid #262626;
 }
 
 .header-content {
@@ -25,6 +26,10 @@
 .logo-wrapper {
   display: flex;
   align-items: center;
+}
+.logo-wrapper a {
+  display: inline-block;  /* safe wrap */
+  cursor: pointer;        /* pointer cursor on hover */
 }
 
 .logo {
