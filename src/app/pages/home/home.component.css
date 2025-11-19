@@ -1,0 +1,775 @@
+/* Global Styles */
+.home-container {
+  width: 100%;
+  overflow-x: hidden;
+  font-family:  sans-serif;
+}
+
+/* Hero Section with Video Background */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+/* Parallelogram Button Styles */
+.btn {
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+  position: relative;
+  transform: skewX(-10deg);
+  overflow: hidden;
+  max-height: 80px;
+  max-width: 200px;
+}
+
+.btn span {
+  display: inline-block;
+  transform: skewX(10deg);
+}
+
+.btn-primary {
+  background-color: #e91e63;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #c2185b;
+  transform: skewX(-10deg) translateY(-2px);
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+}
+
+.btn-secondary {
+  background-color: #8bc34a;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #7cb342;
+  transform: skewX(-10deg) translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 195, 74, 0.4);
+}
+
+.trustpilot-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  font-size: 28px;
+  color: #8bc34a;
+}
+
+.star.empty {
+  color: #cccccc;
+}
+
+.trustpilot-text {
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #8bc34a;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* About Section */
+.about-section {
+  background-color: #1b1b1b;
+  padding: 80px 20px;
+}
+
+.about-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cccccc;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* What Makes Us Different Section */
+.different-section {
+  background-color: #1b1b1b;
+  padding: 80px 20px;
+}
+
+.section-title {
+  font-size: 70px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 50px; /* Added equal margins */
+}
+
+.feature-card {
+  position: relative;
+  aspect-ratio: 3/5;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.feature-card:hover .feature-image {
+  transform: scale(1.1);
+}
+
+.feature-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  padding: 30px 20px;
+}
+
+.feature-title {
+  font-size: 28px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* Scrolling Text Banner - Dual Direction */
+.scrolling-banner {
+  background: #1b1b1b;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  display: flex;
+  white-space: nowrap;
+  margin-bottom: 30px;
+}
+
+.scrolling-text:last-child {
+  margin-bottom: 0;
+}
+
+.scrolling-text-right {
+  animation: scrollRight 30s linear infinite;
+}
+
+.scrolling-text-left {
+  animation: scrollLeft 30s linear infinite;
+}
+
+.scrolling-text span {
+  font-size: 64px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  text-stroke: 2px #ffffff;
+  padding: 0 50px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Values Images Section */
+.values-images-section {
+  background-color: #1b1b1b;
+  padding: 0 0 80px 0;
+}
+
+.values-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.values-imagessecond {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.value-image-container {
+  aspect-ratio: 4/3;
+  width:100%;
+  object-fit:cover;
+}
+
+.value-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.value-image-container:hover .value-image {
+  transform: scale(1.1);
+}
+
+/* Offers Section */
+.offers-section {
+  background-color: #1b1b1b;
+  padding: 80px 60px;
+  position: relative;
+}
+
+.section-title-offer {
+  font-size: 58px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 50px;
+  letter-spacing: -3.5px;
+  text-transform: uppercase;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+  position: relative;
+  top: 35px;
+  font-family:  sans-serif;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.offer-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  height: 400px;
+}
+ .offer-cardfourth {
+position: relative;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  height: 400px;
+  top: -75px;
+ }
+
+ .offer-cardfifth{
+  position: relative;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  height: 400px;
+   transform: translateY(-75px); 
+ }
+
+.offer-cardsixth{
+  position: relative;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  height: 400px;
+   transform: translateY(-75px); 
+}
+
+.offer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.offer-card:hover .offer-image {
+  transform: scale(1.05);
+}
+
+.offer-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
+  padding: 40px 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 1;
+}
+
+.offer-title {
+  font-size: 25px;
+  font-weight: 900;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+  line-height: 1.1;
+}
+
+.offer-description {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  color: #cccccc;
+  flex-grow: 1;
+}
+
+.btn-primarynew {
+  background-color: #e91e63;
+  color: white;
+   max-height: 60px;
+  max-width: 200px;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 11px 20px;
+}
+
+.btn-primarynew:hover {
+  background-color: #c2185b;
+  transform: skewX(-10deg) translateY(-2px);
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+}
+
+/* Reviews Section */
+.reviews-section {
+  background-color: #1b1b1b;
+  padding: 40px 20px;
+}
+
+.reviews-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-left: -20px;
+  margin-right: 40px;
+}
+
+.reviews-left {
+  position: sticky;
+  top: 100px;
+  
+}
+
+
+.trustpilot-score {
+  background-color: #1a1a1a;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.score-label {
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.stars-large {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.stars-large .star {
+  font-size: 36px;
+  color: #8bc34a;
+}
+
+.reviews-count {
+  font-size: 14px;
+  color: #cccccc;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.reviews-count strong {
+  color: white;
+  text-decoration: underline;
+}
+.section-title {
+  font-size: 59px;
+  
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  font-family:  sans-serif;
+}
+.section-titledifferent {
+font-size: 59px;
+  
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  font-family:  sans-serif;
+  text-align:right;
+  padding-right: 45px;
+  line-height: 1.2;
+}
+.trustpilot-logo {
+  width: 120px;
+  height: auto;
+}
+
+.reviews-right {
+  position: relative;
+  margin-top: -10px;
+}
+
+.reviews-carousel {
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.carousel-btn {
+  background-color: #555;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background-color: #c2185b;
+  transform: scale(1.1);
+}
+
+.carousel-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.reviews-slider {
+  overflow: hidden;
+  flex: 1;
+}
+
+.reviews-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
+}
+
+.review-card {
+  min-width: calc(33.33% - 14px);
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 15px;
+}
+
+.review-stars .star {
+  font-size: 20px;
+  color: #8bc34a;
+}
+
+.review-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.review-author {
+  font-size: 14px;
+  color: #999;
+  font-family: Arial, sans-serif;
+}
+
+.author-name {
+  font-weight: bold;
+  color: #8bc34a;
+}
+
+.reviews-footer {
+  text-align: center;
+  color: #cccccc;
+  font-size: 14px;
+  margin-top: 30px;
+  font-family: Arial, sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 40px;
+  }
+  
+  .values-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .reviews-left {
+    position: static;
+  }
+
+  .trustpilot-score {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 50px;
+  }
+  
+  
+  .section-title-offer {
+    font-size: 40px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+  
+  .values-images {
+    grid-template-columns: 1fr;
+  }
+  
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .scrolling-text span {
+    font-size: 32px;
+  }
+  
+  .feature-title {
+    font-size: 22px;
+  }
+  
+  .offer-title {
+    font-size: 28px;
+  }
+
+  .review-card {
+    min-width: 100%;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  .section-title,
+  .section-title-offer {
+    font-size: 32px;
+  }
+  
+  .about-text {
+    font-size: 16px;
+  }
+  
+  .scrolling-text span {
+    font-size: 24px;
+  }
+}

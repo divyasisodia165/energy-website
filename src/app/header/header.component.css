@@ -1,0 +1,137 @@
+/* header.component.css */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Styles */
+.header {
+  background-color: #1b1b1b;
+  border-bottom: 1px solid #1b1b1b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+}
+
+/* Navigation Styles */
+.nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 1.5rem;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #a3e635;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+/* Join Now Button */
+.btn-join {
+  background-color: #ec4899;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: none;
+  transform: skewX(-10deg);
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.btn-join:hover {
+  background-color: #db2777;
+}
+
+.btn-text {
+  display: block;
+  transform: skewX(10deg);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .logo {
+    height: 56px;
+  }
+
+  .nav-desktop {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .nav-desktop {
+    gap: 2.5rem;
+  }
+
+  .btn-join {
+    padding: 0.75rem 2.5rem;
+  }
+}

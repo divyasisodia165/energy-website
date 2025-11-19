@@ -1,0 +1,264 @@
+<div class="home-container">
+  <!-- Hero Section with Video Background -->
+  <section class="hero-section">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/videos/hero-background.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">WELCOME TO ENERGIE FITNESS</h1>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" (click)="onJoinNow()">JOIN NOW</button>
+        <button class="btn btn-secondary" (click)="onFindGym()">FIND A GYM</button>
+      </div>
+      <div class="trustpilot-badge">
+        <div class="stars">
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star empty">★</span>
+        </div>
+        <span class="trustpilot-text">★ Trustpilot</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="arrow-down"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-content">
+      <p class="about-text">
+        The moment you walk into an énergie Fitness gym, things feel different. From 
+        the warm personal welcome you'll get from our colleagues to the awesome 
+        equipment you normally only get at premium gyms, we offer a unique blend of 
+        budget and boutique! Enjoy fun and inclusive fitness classes, experienced 
+        personal trainers and a real social community. Kickstart your new fitness 
+        routine and join an énergie Fitness gym near you today!
+      </p>
+    </div>
+  </section>
+
+   <!-- What Our Members Say Section -->
+  <section class="reviews-section">
+    <div class="reviews-container">
+      <div class="reviews-left">
+        <div class="trustpilot-score">
+          <h3 class="score-label">Great</h3>
+          <div class="stars-large">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star empty">★</span>
+          </div>
+          <p class="reviews-count">Based on <strong>{{reviewsCount}}</strong> reviews</p>
+          <img src="assets/images/trustpilot-logo.png" alt="Trustpilot" class="trustpilot-logo">
+        </div>
+      </div>
+      
+      <div class="reviews-right">
+        <h2 class="section-title">WHAT OUR MEMBERS SAY</h2>
+        <div class="reviews-carousel">
+          <button class="carousel-btn carousel-btn-prev" (click)="previousReviews()" [disabled]="currentReviewIndex === 0">
+            ‹
+          </button>
+          
+          <div class="reviews-slider">
+            <div class="reviews-track" [style.transform]="'translateX(-' + (currentReviewIndex * 33.33) + '%)'">
+              <div class="review-card" *ngFor="let review of reviews">
+                <div class="review-stars">
+                  <span class="star filled" *ngFor="let star of [1,2,3,4,5]">★</span>
+                </div>
+                <h4 class="review-title">{{review.title}}</h4>
+                <p class="review-text">{{review.text}}</p>
+                <div class="review-author">
+                  <span class="author-name">{{review.author}}</span>, 
+                  <span class="review-time">{{review.time}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <button class="carousel-btn carousel-btn-next" (click)="nextReviews()" [disabled]="currentReviewIndex >= reviews.length - 3">
+            ›
+          </button>
+        </div>
+        <p class="reviews-footer">Showing our 5 star reviews</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+  <!-- What Makes Us Different Section -->
+  <section class="different-section">
+    <h2 class="section-titledifferent">WHAT MAKES US <br> DIFFERENT</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <img [src]="'assets/images/feature1.jpg'" alt="Zero Attitudes" class="feature-image">
+        <div class="feature-overlay">
+          <h3 class="feature-title">ZERO ATTITUDES. ZERO INTIMIDATION.</h3>
+        </div>
+      </div>
+      <div class="feature-card">
+        <img [src]="'assets/images/feature2.jpg'" alt="Locally Owned" class="feature-image">
+        <div class="feature-overlay">
+          <h3 class="feature-title">LOCALLY OWNED</h3>
+        </div>
+      </div>
+      <div class="feature-card">
+        <img [src]="'assets/images/feature3.jpg'" alt="Positive Energie" class="feature-image">
+        <div class="feature-overlay">
+          <h3 class="feature-title">POSITIVE ÉNERGIE</h3>
+        </div>
+      </div>
+      <div class="feature-card">
+        <img [src]="'assets/images/feature4.jpg'" alt="Boutique Fitness" class="feature-image">
+        <div class="feature-overlay">
+          <h3 class="feature-title">BOUTIQUE FITNESS ON A BUDGET</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scrolling Text Banner (Dual Direction) -->
+  <section class="scrolling-banner">
+    <div class="scrolling-text scrolling-text-right">
+      <span>DYNAMIC. WELCOMING. FRIENDLY. GOOD VIBES. COMMUNITY. PASSIONATE. ENGAGING. DOWN TO EARTH. </span>
+      <span>DYNAMIC. WELCOMING. FRIENDLY. GOOD VIBES. COMMUNITY. PASSIONATE. ENGAGING. DOWN TO EARTH. </span>
+    </div>
+   
+
+  <!-- Values Images -->
+  <section class="values-images-section">
+    <div class="values-images">
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer1.jpg'" alt="Trainer helping member" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer2.jpg'" alt="Woman training" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer3.jpg'" alt="Man at gym" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer4.jpg'" alt="Woman boxing" class="value-image">
+      </div>
+    </div>
+  </section>
+  <section class="values-images-section">
+    <div class="values-imagessecond">
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer1.jpg'" alt="Trainer helping member" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer2.jpg'" alt="Woman training" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer3.jpg'" alt="Man at gym" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer4.jpg'" alt="Woman boxing" class="value-image">
+      </div>
+    </div>
+  </section>
+   <div class="scrolling-text scrolling-text-left">
+      <span>DYNAMIC. WELCOMING. FRIENDLY. GOOD VIBES. COMMUNITY. PASSIONATE. ENGAGING. DOWN TO EARTH. </span>
+      <span>DYNAMIC. WELCOMING. FRIENDLY. GOOD VIBES. COMMUNITY. PASSIONATE. ENGAGING. DOWN TO EARTH. </span>
+    </div>
+  </section>
+
+  <!-- What's On Offer Section -->
+  <section class="offers-section">
+    <h2 class="section-title-offer">WHAT'S ON OFFER</h2>
+    <div class="offers-grid">
+      <!-- Digital Fitness Platform -->
+      <div class="offer-card">
+        <img [src]="'assets/images/digital-fitness.jpg'" alt="Digital Fitness Platform" class="offer-image">
+        <div class="offer-content">
+          <h3 class="offer-title">DIGITAL FITNESS<br>PLATFORM</h3>
+          <p class="offer-description">
+            From high intensity, fat burning cardio to low impact strength training or 
+            boxing to body, with énergie OnDemand you can enjoy 25+ live weekly classes 
+            and hundreds of on demand workouts directly from home.
+          </p>
+          <button class="btn btn-primarynew" (click)="onLearnMore('digital-fitness')">FIND OUT MORE</button>
+        </div>
+      </div>
+
+      <!-- Personal Training -->
+      <div class="offer-cardfourth">
+        <img [src]="'assets/images/personal-training.jpg'" alt="Personal Training" class="offer-image">
+        <div class="offer-content">
+          <h3 class="offer-title">PERSONAL<br>TRAINING</h3>
+          <p class="offer-description">
+            When you want some extra guidance, our team are right there. All our 
+            personal trainers are highly qualified and experience so the help you 
+            need to hit your next fitness goal is always on-hand.
+          </p>
+          <button class="btn btn-primarynew" (click)="onLearnMore('personal-training')">SIGN UP TODAY</button>
+        </div>
+      </div>
+
+      <!-- Inclusive Classes -->
+      <div class="offer-card">
+        <img [src]="'assets/images/classes.jpg'" alt="Inclusive Classes" class="offer-image">
+        <div class="offer-content">
+          <h3 class="offer-title">INCLUSIVE<br>CLASSES</h3>
+          <p class="offer-description">
+            Whether you're after a fast-paced morning HIIT, a challenging lunch-
+            time circuit or a relaxing evening class, you'll find plenty to keep you 
+            busy throughout the week.
+          </p>
+          <button class="btn btn-primarynew" (click)="onLearnMore('classes')">FIND OUT MORE</button>
+        </div>
+      </div>
+
+      <!-- The Yard -->
+      <div class="offer-cardfifth">
+        <img [src]="'assets/images/yard.jpg'" alt="The Yard" class="offer-image">
+        <div class="offer-content">
+          <h3 class="offer-title">EXCLUSIVE FITNESS<br>PLAYGROUND</h3>
+          <p class="offer-description">
+            Exclusive to énergie fitness only the Yard is a seriously cool training space, 
+            equipped with a range of versatile kit such as punch bags, TRX, and 
+            slam balls.
+          </p>
+          <button class="btn btn-primarynew" (click)="onLearnMore('yard')">THE YARD</button>
+        </div>
+      </div>
+
+      <!-- Energie Blog -->
+      <div class="offer-card">
+        <img [src]="'assets/images/blog.jpg'" alt="Energie Blog" class="offer-image">
+        <div class="offer-content">
+          <h3 class="offer-title">ÉNERGIE<br>BLOG</h3>
+          <p class="offer-description">
+            Welcome to the Énergie Fitness blog, your ultimate hub for all things 
+            fitness, nutrition, and wellness. Whether you're a seasoned gym-goer or 
+            just beginning your health journey, our blog is here to inspire, motivate, 
+            and guide you toward achieving your goals!
+          </p>
+          <button class="btn btn-primarynew" (click)="onLearnMore('blog')">CHECK IT OUT</button>
+        </div>
+      </div>
+
+      <!-- Energie Spotify -->
+      <div class="offer-cardsixth">
+        <img [src]="'assets/images/spotify.jpg'" alt="Energie Spotify" class="offer-image">
+        <div class="offer-content">
+          <h3 class="offer-title">ÉNERGIE<br>SPOTIFY</h3>
+          <p class="offer-description">
+            Boost your workouts with our énergie Fitness Spotify playlist, the 
+            perfect soundtrack to keep you moving!
+          </p>
+          <button class="btn btn-primarynew" (click)="onLearnMore('spotify')">LISTEN NOW</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
