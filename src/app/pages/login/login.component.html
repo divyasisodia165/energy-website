@@ -1,1 +1,61 @@
-<p>login works!</p>
+<!-- login.component.html -->
+<div class="login-container">
+  <div class="login-content">
+    <h1 class="login-title">LOGIN</h1>
+    <p class="login-subtitle">PLEASE CHOOSE YOUR LOCATION</p>
+
+    <!-- COUNTRY SELECT -->
+    <div class="form-group">
+      <select 
+        class="location-select"
+        [(ngModel)]="selectedCountry"
+        (change)="onCountryChange()">
+        <option *ngFor="let country of countries" [value]="country">
+          {{ country }}
+        </option>
+      </select>
+    </div>
+
+    <!-- LOCATION SELECT -->
+    <div class="form-group">
+      <select 
+        class="location-select"
+        [(ngModel)]="selectedLocation"
+        (change)="onLocationChange()">
+        <option value="" disabled selected>- Choose your location -</option>
+        <option *ngFor="let location of locations" [value]="location">
+          {{ location }}
+        </option>
+      </select>
+    </div>
+
+    <!-- EMAIL & PASSWORD (Visible only after location selection) -->
+    <div *ngIf="showLoginForm" class="form-fade">
+
+      <!-- EMAIL -->
+      <div class="form-group">
+        <input 
+          type="email"
+          class="location-select"
+          placeholder="Enter your email"
+          [(ngModel)]="email">
+      </div>
+
+      <!-- PASSWORD -->
+      <div class="form-group">
+        <input 
+          type="password"
+          class="location-select"
+          placeholder="Enter your password"
+          [(ngModel)]="password">
+      </div>
+
+      <!-- FORGOT PASSWORD -->
+      <p class="forgot-text">Forgot your password ?</p>
+
+      <!-- LOGIN BUTTON -->
+      <button class="btn-login">LOGIN</button>
+    </div>
+
+  </div>
+</div>
