@@ -1,1 +1,76 @@
-<p>find-gym works!</p>
+<div class="find-gym-container">
+  <!-- Main Content -->
+  <div class="content-wrapper">
+    
+    <!-- Map Section -->
+    <div class="map-container">
+      <div class="map-wrapper">
+        <iframe
+          title="Google Map"
+          [src]="mapUrl"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Title -->
+      <h1 class="hero-title">FIND YOUR GYM</h1>
+
+      <!-- Search Box -->
+      <div class="search-box">
+        <input 
+          type="text" 
+          [(ngModel)]="searchPostcode"
+          placeholder="Search by city, pincode or area"
+          class="search-input"
+          (keyup.enter)="searchByPostcode()">
+        <button class="location-btn" (click)="useCurrentLocation()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2v4m0 12v4M2 12h4m12 0h4" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button 
+          class="tab-btn"
+          [class.active]="selectedTab === 'INDIA'"
+          (click)="selectTab('INDIA')">
+          INDIA
+        </button>
+        <button 
+          class="tab-btn worldwide"
+          [class.active]="selectedTab === 'WORLDWIDE'"
+          (click)="selectTab('WORLDWIDE')">
+          WORLDWIDE
+        </button>
+      </div>
+
+      <!-- Country Title -->
+      <h2 class="country-title">INDIA</h2>
+
+      <!-- Gym List -->
+      <div class="gym-list">
+        <div 
+          class="gym-item"
+          *ngFor="let gym of indiaGyms"
+          (click)="selectGym(gym)">
+          <span class="gym-name">{{ gym.name }}</span>
+          <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

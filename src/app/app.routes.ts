@@ -11,5 +11,6 @@ export const routes: Routes = [
   { path: 'find-gym', component: FindGymComponent },
   { path: 'explore', component: ExploreComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'join-now', component: JoinNowComponent }
+  // Change this route to point FindGymComponent instead of JoinNowComponent
+  { path: 'join-now', component: FindGymComponent }  
 ];
