@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FindGymComponent } from '../find-gym/find-gym.component';
+
 
 interface Review {
   title: string;
@@ -10,9 +12,13 @@ interface Review {
 
 @Component({
   selector: 'app-home',
+  standalone: true,
+  imports: [FindGymComponent],   // ⭐ ADD THIS
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+ 
+
 export class HomeComponent implements OnInit, OnDestroy {
   private scrollListener: any;
   
