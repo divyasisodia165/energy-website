@@ -13,7 +13,7 @@
 }
 
 .hero-title {
-  font-size: 40px; /* Moderate size */
+  font-size: 39.5px; /* Moderate size */
   font-weight: 900;
   letter-spacing: 1.5px;
   margin: 0 0 20px 0;
@@ -34,7 +34,7 @@
 /* Map Section */
 .map-container {
   position: relative;
-  background-color: #e0e7ef;
+  background-color: #1b1b1b;
   overflow: hidden;
   height: auto;
 }

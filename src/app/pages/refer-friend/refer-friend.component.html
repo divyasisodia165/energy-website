@@ -1,0 +1,35 @@
+<div class="refer-friend-container">
+  <!-- Hero Section with Background Image -->
+  <div class="hero-section" [style.backgroundImage]="'url(assets/images/gym-hero.jpg)'">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">REFER FOR REWARDS</h1>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content-section">
+    <h2 class="section-title">WORKING OUT IS BETTER TOGETHER</h2>
+    
+    <p class="description">
+      Refer a friend to us and you'll both receive a gift card of your choice when they join! Simply select 
+      your home club below and follow the instructions to start your referral.
+    </p>
+
+    <!-- Gym Selection Dropdown -->
+    <div class="form-group">
+      <select 
+        class="gym-select" 
+        [(ngModel)]="selectedGym"
+        (change)="onGymSelect($event)">
+        <option value="" disabled selected>Select Gym</option>
+        <option *ngFor="let gym of gyms" [value]="gym">{{ gym }}</option>
+      </select>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="submit-btn" (click)="onSubmit()">
+      LET'S GO!
+    </button>
+  </div>
+</div>
