@@ -1,0 +1,433 @@
+/* free-trial.component.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+/* ============================================
+   SECTION 1: Hero Section with Background Image
+   ============================================ */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  min-height: 300px;
+  max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-title {
+ font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================
+   SECTION 2: Text Content Section
+   ============================================ */
+.text-content-section {
+  background:#1b1b1b;
+  padding: 60px 10px 50px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.text-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-style: italic;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin: 0 0 30px 0;
+  text-transform: uppercase;
+  margin-top: -15px;
+}
+
+.section-text {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #d0d0d0;
+  max-width: 570px;
+  margin: 0 auto 5px;
+  font-weight: 300;
+}
+
+/* ============================================
+   SECTION 3: FAQ and Form Section
+   ============================================ */
+.form-faq-section {
+  background: #1b1b1b;
+  padding: 50px 90px;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* FAQ Section */
+.faq-container {
+  color: #e0e0e0;
+}
+
+.faq-title {
+  font-size: 25px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  border-bottom: 0.1px solid rgba(255, 255, 255, 0.3);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #e0e0e0;
+}
+
+.faq-question:hover {
+  color: #a3e635;
+}
+
+.faq-icon {
+  font-size: 24px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  transform: rotate(180deg);
+  color: #ffffff;
+}
+
+.faq-icon.active {
+  transform: rotate(0deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0;
+}
+
+.faq-answer.active {
+  max-height: 500px;
+  padding-bottom: 24px;
+}
+
+.faq-answer p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #b0b0b0;
+  font-weight: 400;
+}
+
+/* Form Section */
+.form-container {
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(10px);
+  border: 0.1px rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 30px 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-group-half {
+  margin-bottom: 0;
+}
+
+.form-control {
+  width: 100%;
+  padding: 16px 18px;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.6);
+  color: #e0e0e0;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #a3e635;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.1);
+}
+
+.form-control option {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+/* Date of Birth */
+.form-group-dob {
+  margin-bottom: 20px;
+}
+
+.dob-label {
+  display: block;
+  color: #e0e0e0;
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.dob-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.dob-select {
+  padding: 16px 12px;
+}
+
+/* Terms and Privacy */
+.terms-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.terms-link {
+  color: #a3e635;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.terms-link:hover {
+  color: #a3e635;
+}
+
+.preferences-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Checkboxes */
+.checkbox-group {
+  margin-bottom: 15px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #e0e0e0;
+  font-size: 15px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+  cursor: pointer;
+  accent-color: #a3e635;
+}
+
+.checkbox-text {
+  user-select: none;
+}
+
+.privacy-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 25px 0;
+  font-style: italic;
+}
+
+/* Submit Button */
+.submit-button {
+  background:#a3e635;
+  color: #1a1a1a;
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  margin-top: -12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 4px;
+  float: right;
+  box-shadow: 0 4px 15px #a3e635;
+  clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+}
+
+.submit-button:hover {
+  background: #a3e635;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px #a3e635;
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-title {
+    font-size: 64px;
+    letter-spacing: 8px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 40vh;
+    min-height: 300px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    letter-spacing: 4px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-text {
+    font-size: 16px;
+  }
+
+  .text-content-section {
+    padding: 60px 30px;
+  }
+
+  .form-faq-section {
+    padding: 60px 15px;
+  }
+
+  .form-container {
+    padding: 30px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dob-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-title {
+    font-size: 28px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .text-content-section {
+    padding: 40px 20px;
+  }
+
+  .form-faq-section {
+    padding: 40px 15px;
+  }
+}

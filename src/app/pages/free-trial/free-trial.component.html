@@ -1,1 +1,241 @@
-<p>free-trial works!</p>
+<!-- free-trial.component.html -->
+
+<!-- Section 1: Hero Section with Background Image -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <img src="assets/images/hero-boxing.jpg" alt="Boxing Training" class="hero-image">
+  <!-- CHANGE IMAGE PATH HERE -->
+  
+  <div class="hero-content">
+    <h1 class="hero-title">TRY US FREE</h1>
+  </div>
+</section>
+
+<!-- Section 2: Text Content Section -->
+<section class="text-content-section">
+  <div class="text-container">
+    <h2 class="section-title">TRY US FOR FREE TODAY</h2>
+    <p class="section-text">
+      Joining a new gym can sometimes be daunting, we get it. That's why we offer a
+      completely free trial, no strings attached.
+    </p>
+    <p class="section-text">
+      So if you would like to check us out or try before you buy, you're in the right place. Simply
+      complete the below form with your details, and a member of our team will shortly be in
+      touch to book you in for a free trial at a time that suits you.
+    </p>
+  </div>
+</section>
+
+<!-- Section 3: FAQ and Form Section -->
+<section class="form-faq-section">
+  <div class="content-wrapper">
+    
+    <!-- Left Side: FAQ -->
+    <div class="faq-container">
+      <h2 class="faq-title">Your Questions Answered</h2>
+      
+      <!-- FAQ Item 1 -->
+      <div class="faq-item">
+        <div class="faq-question" (click)="toggleFaq('whatIsFreeTrial')">
+          <span>What exactly is a free trial?</span>
+          <span class="faq-icon" [class.active]="faqStates['whatIsFreeTrial']">^</span>
+        </div>
+        <div class="faq-answer" [class.active]="faqStates['whatIsFreeTrial']">
+          <p>
+            Whether you want to push yourself solo on the weights or jump into 
+            one of our high energy, inclusive classes, your free trial gives you 
+            access to almost everything we have to offer - so you can get a real 
+            taster of what to expect if you choose to join.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="faq-item">
+        <div class="faq-question" (click)="toggleFaq('howOldDoINeed')">
+          <span>How old do I need to be to request a free trial?</span>
+          <span class="faq-icon" [class.active]="faqStates['howOldDoINeed']">^</span>
+        </div>
+        <div class="faq-answer" [class.active]="faqStates['howOldDoINeed']">
+          <p>You must be at least 18 years old.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="faq-item">
+        <div class="faq-question" (click)="toggleFaq('howManyFreeTrials')">
+          <span>Is there a limit to how many free trials I can have?</span>
+          <span class="faq-icon" [class.active]="faqStates['howManyFreeTrials']">^</span>
+        </div>
+        <div class="faq-answer" [class.active]="faqStates['howManyFreeTrials']">
+          <p>Our free trials are limited to one per person.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="faq-item">
+        <div class="faq-question" (click)="toggleFaq('canAnyoneBook')">
+          <span>Can anyone book a free trial?</span>
+          <span class="faq-icon" [class.active]="faqStates['canAnyoneBook']">^</span>
+        </div>
+        <div class="faq-answer" [class.active]="faqStates['canAnyoneBook']">
+          <p>Free trials are only valid for non-members and first-time guests only.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Form -->
+    <div class="form-container">
+      <form (ngSubmit)="onSubmit()">
+        
+        <!-- Select Gym -->
+        <div class="form-group">
+          <select class="form-control" [(ngModel)]="formData.gym" name="gym" required>
+            <option value="" disabled selected>Select Gym</option>
+            <option value="gym1">Gym Location 1</option>
+            <option value="gym2">Gym Location 2</option>
+            <option value="gym3">Gym Location 3</option>
+          </select>
+        </div>
+
+        <!-- How did you hear about us -->
+        <div class="form-group">
+          <select class="form-control" [(ngModel)]="formData.howDidYouHear" name="howDidYouHear" required>
+            <option value="" disabled selected>How did you hear about us? *</option>
+            <option value="social">Social Media</option>
+            <option value="friend">Friend</option>
+            <option value="online">Online Search</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- Title and Gender Row -->
+        <div class="form-row">
+          <div class="form-group form-group-half">
+            <select class="form-control" [(ngModel)]="formData.title" name="title" required>
+              <option value="" disabled selected>Please select a title *</option>
+              <option value="mr">Mr</option>
+              <option value="mrs">Mrs</option>
+              <option value="miss">Miss</option>
+              <option value="ms">Ms</option>
+              <option value="dr">Dr</option>
+            </select>
+          </div>
+          <div class="form-group form-group-half">
+            <select class="form-control" [(ngModel)]="formData.gender" name="gender" required>
+              <option value="" disabled selected>Gender *</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="prefer-not">Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- First Name -->
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="First name *" 
+                 [(ngModel)]="formData.firstName" name="firstName" required>
+        </div>
+
+        <!-- Last Name -->
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Last name *" 
+                 [(ngModel)]="formData.lastName" name="lastName" required>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group-dob">
+          <label class="dob-label">Date Of Birth *</label>
+          <div class="dob-inputs">
+            <select class="form-control dob-select" [(ngModel)]="formData.dobDay" name="dobDay" required>
+              <option value="" disabled selected>Day</option>
+              <option *ngFor="let day of days" [value]="day">{{day}}</option>
+            </select>
+            <select class="form-control dob-select" [(ngModel)]="formData.dobMonth" name="dobMonth" required>
+              <option value="" disabled selected>Month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <select class="form-control dob-select" [(ngModel)]="formData.dobYear" name="dobYear" required>
+              <option value="" disabled selected>Year</option>
+              <option *ngFor="let year of years" [value]="year">{{year}}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email *" 
+                 [(ngModel)]="formData.email" name="email" required>
+        </div>
+
+        <!-- Postcode -->
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Postcode *" 
+                 [(ngModel)]="formData.postcode" name="postcode" required>
+        </div>
+
+        <!-- Mobile Phone -->
+        <div class="form-group">
+          <input type="tel" class="form-control" placeholder="Mobile phone *" 
+                 [(ngModel)]="formData.mobilePhone" name="mobilePhone" required>
+        </div>
+
+        <!-- Terms Text -->
+        <p class="terms-text">
+          By joining énergie fitness as a Member, booking a visit or registering 
+          an interest, you agree to our <a href="#" class="terms-link">Terms</a> and to our <a href="#" class="terms-link">Privacy Policy</a>.
+        </p>
+
+        <!-- Contact Preferences -->
+        <p class="preferences-text">
+          Please use the tick boxes below to tell us how you'd like to be kept up-to-date with information about relevant offers and promotions:
+        </p>
+
+        <div class="checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" [(ngModel)]="formData.contactByEmail" name="contactByEmail">
+            <span class="checkbox-text">I agree to being contacted by Email</span>
+          </label>
+        </div>
+
+        <div class="checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" [(ngModel)]="formData.contactByText" name="contactByText">
+            <span class="checkbox-text">I agree to being contacted by text message</span>
+          </label>
+        </div>
+
+        <div class="checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" [(ngModel)]="formData.contactByPhone" name="contactByPhone">
+            <span class="checkbox-text">I agree to being contacted by Phone</span>
+          </label>
+        </div>
+
+        <!-- Privacy Notice -->
+        <p class="privacy-text">
+          You can still update your preferences, including opting out, at any time 
+          in the Member Area. We will never sell your data to other companies 
+          without your consent and will keep your details safe and secure.
+        </p>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button">SUBMIT</button>
+      </form>
+    </div>
+
+  </div>
+</section>

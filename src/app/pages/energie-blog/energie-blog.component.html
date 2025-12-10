@@ -1,1 +1,111 @@
-<p>energie-blog works!</p>
+<div class="blog-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <img src="/assets/images/hero-bg.jpg" alt="background img" class="hero-bg-image">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">THE ENERGIE BLOG</h1>
+      <p class="hero-description">
+        Welcome to the Energie Fitness blog, your ultimate source for all things wellness.<br>
+        Whether you are a seasoned gym-goer or just starting your health journey, our blog is<br>
+        here to inspire, motivate, and guide you towards achieving your wellbeing goals.
+      </p>
+    </div>
+  </section>
+
+  <!-- Categories and Search -->
+  <section class="filters-section">
+    <div class="categories">
+      <button 
+        *ngFor="let cat of categories"
+        class="category-btn"
+        [class.active]="selectedCategory === cat.id"
+        (click)="selectCategory(cat.id)">
+        {{ cat.label }}
+      </button>
+    </div>
+    
+    <div class="search-box">
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input 
+        type="text" 
+        class="search-input" 
+        placeholder="Search"
+        [(ngModel)]="searchQuery">
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="blog-grid">
+    <article *ngFor="let post of paginatedPosts" class="blog-card">
+      <div class="blog-image-container">
+        <img [src]="post.image" [alt]="post.title" class="blog-image" (error)="onImageError($event)">
+        <span class="blog-category-badge">{{ post.category }}</span>
+      </div>
+      
+      <div class="blog-content">
+        <h2 class="blog-title">{{ post.title }}</h2>
+        <p class="blog-description">{{ post.description }}</p>
+        
+        <div class="blog-meta">
+          <div class="meta-item">
+            <svg class="meta-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="2" y="3" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M2 6h12M5 1v2M11 1v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>{{ post.date }}</span>
+          </div>
+          
+          <div class="meta-item">
+            <svg class="meta-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 4v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>{{ post.readTime }}</span>
+          </div>
+          
+          <div class="meta-item">
+            <svg class="meta-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="5" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M2 14c0-3 2.5-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>{{ post.author }}</span>
+          </div>
+        </div>
+        
+        <button class="read-more-btn">READ MORE</button>
+      </div>
+    </article>
+  </section>
+
+  <!-- Pagination -->
+  <nav class="pagination" *ngIf="totalPages > 1">
+    <button 
+      class="pagination-arrow"
+      [disabled]="currentPage === 1"
+      (click)="previousPage()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    
+    <button 
+      *ngFor="let page of pageNumbers"
+      class="pagination-number"
+      [class.active]="currentPage === page"
+      (click)="goToPage(page)">
+      {{ page }}
+    </button>
+    
+    <button 
+      class="pagination-arrow"
+      [disabled]="currentPage === totalPages"
+      (click)="nextPage()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </nav>
+</div>

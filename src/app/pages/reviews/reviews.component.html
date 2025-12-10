@@ -1,1 +1,97 @@
-<p>reviews works!</p>
+<div class="reviews-container">
+  <!-- Hero Section with Background Image -->
+  <div class="hero-section">
+    <!-- CHANGE IMAGE PATH HERE -->
+    <img src="assets/REPLACE_ME_hero_image.jpg" alt="Gym member" class="hero-bg-image">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">WHAT OUR MEMBERS SAY</h1>
+    </div>
+  </div>
+
+  <!-- Content Section with Fixed Height and Internal Scroll -->
+  <div class="content-section">
+    <div class="intro-content">
+      <p class="intro-text">
+        At énergie Fitness we take pride in helping our members achieve their fitness 
+        goals, building and developing each individual gym to offer an excellent level of 
+        service and all the tools they need for success – all within a fun and empowering 
+        environment. To help us make sure we're delivering the énergie promise to 
+        every member, in every gym, we have partnered with the online review 
+        community, Trustpilot, to collect reviews.
+      </p>
+      
+      <p class="secondary-text">
+        Here is what verified active énergie Fitness members have told us about their 
+        experience...
+      </p>
+
+      <!-- Leave Review Button -->
+      <button class="leave-review-btn">LEAVE US A REVIEW</button>
+
+      <!-- Trustpilot Rating -->
+      <div class="trustpilot-rating">
+        <div class="star-rating">
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star empty">★</span>
+        </div>
+        <div class="trustpilot-logo">
+          <span class="trust-star">★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative Lines (Right Side) -->
+    <div class="decorative-lines">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+      <div class="line line-4"></div>
+      <div class="line line-5"></div>
+      <div class="line line-6"></div>
+    </div>
+
+    <!-- Reviews Grid with Fixed Height and Internal Scroll -->
+    <div class="reviews-wrapper">
+    
+      <div class="reviews-grid">
+        <div class="review-card" *ngFor="let review of reviews">
+          <!-- Star Rating -->
+          <div class="card-star-rating">
+            <span *ngFor="let filled of getStarArray(review.rating)" 
+                  class="star" 
+                  [class.filled]="filled">★</span>
+          </div>
+
+          <!-- Reviewer Info -->
+          <div class="reviewer-info">
+            <span class="reviewer-name">{{ review.name }}</span>
+            <span class="review-date">, {{ review.date }}</span>
+          </div>
+
+          <!-- Review Title -->
+          <h3 class="review-title">{{ review.title }}</h3>
+
+          <!-- Review Content -->
+          <p class="review-content">{{ review.content }}</p>
+
+          <!-- Read More Link -->
+          <a href="#" class="read-more">Read more</a>
+
+          <!-- Reply Section (if exists) -->
+          <div class="reply-section" *ngIf="review.hasReply">
+            <div class="reply-header">
+              <span class="reply-icon">↩</span>
+              <span class="reply-text">Reply from énergie Fitness</span>
+            </div>
+            <div class="reply-date">{{ review.replyDate }}</div>
+            <a href="#" class="read-more">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
