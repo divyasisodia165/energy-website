@@ -349,7 +349,7 @@
 /* Offers Section */
 .offers-section {
   background-color: #1b1b1b;
-  padding: 80px 60px;
+  padding: 40px 60px 60px 60px;
   position: relative;
 }
 
@@ -474,7 +474,7 @@ position: relative;
 /* Reviews Section */
 .reviews-section {
   background-color: #1b1b1b;
-  padding: 40px 20px;
+  padding: 90px 20px 50px 20px;
 }
 
 .reviews-container {

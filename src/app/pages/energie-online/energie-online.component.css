@@ -213,7 +213,7 @@ body {
 }
 
 .pink-text {
-  color: #e75a7c;
+  color: #e91e63;
 }
 
 .green-text {
@@ -270,12 +270,12 @@ body {
 }
 
 .btn-pink {
-  background-color: #e75a7c;
+  background-color: #e91e63;
   color: white;
 }
 
 .btn-pink:hover {
-  background-color: #d14868;
+  background-color: #e91e63;
 }
 
 /* PICKS SECTION */

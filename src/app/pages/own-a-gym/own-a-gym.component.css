@@ -155,12 +155,12 @@ body {
 }
 
 .btn-pink {
-  background-color: #e75a7c;
+  background-color: #e91e63;
   color: white;
 }
 
 .btn-pink:hover {
-  background-color: #d14868;
+  background-color: #e91e63;
 }
 
 .btn-green {
@@ -557,7 +557,7 @@ body {
   max-width: 1700px;
   margin: 0 auto;
   background-color: #f5f0e8;
-  padding: 30px 0px;
+  padding: 30px 15px;
 }
 
 .disclaimer-text {
