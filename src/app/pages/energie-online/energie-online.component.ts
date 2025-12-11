@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-energie-online',
-  imports: [],
   templateUrl: './energie-online.component.html',
-  styleUrl: './energie-online.component.css',
+  styleUrls: ['./energie-online.component.css']
 })
-export class EnergieOnline {
+export class EnergieOnline implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
 }

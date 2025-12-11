@@ -1,0 +1,806 @@
+/* GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #1b1b1b;
+}
+
+/* HEADER STYLES */
+.header {
+  background-color: #1b1b1b;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  position: relative;
+}
+
+.nav-left {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-link:hover {
+  color: #8bc53f;
+}
+
+.dropdown-icon {
+  font-size: 10px;
+}
+
+.tagline {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Brush Script MT', cursive;
+  font-size: 18px;
+  color: #8bc53f;
+  font-style: italic;
+}
+
+.login-btn {
+  background-color: transparent;
+  border: 2px solid #ccc;
+  color: #ccc;
+  padding: 10px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #8bc53f;
+  border-color: #8bc53f;
+  color: #fff;
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  min-height: 500px;
+  background-color: black;
+}
+
+.hero-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px;
+}
+
+.hero-title {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* WORKOUT ANYWHERE SECTION */
+.workout-anywhere-section {
+  background-color: whitesmoke;
+  padding:40px 40px;
+}
+
+.workout-anywhere-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 35px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-description {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 0px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CLASSES SECTION */
+.classes-section {
+  background-color: whitesmoke;
+  padding: 0 30px 60px;
+}
+
+.classes-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.class-card {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.class-card-background {
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.class-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.class-card-title {
+  position: relative;
+  z-index: 2;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.pink-text {
+  color: #e75a7c;
+}
+
+.green-text {
+  color: #8bc53f;
+}
+
+/* DETAILS SECTION */
+.details-section {
+  background-color: whitesmoke;
+  padding: 0 30px 80px;
+}
+
+.details-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: -20px;
+}
+
+.detail-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.detail-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* BUTTON STYLES */
+.btn {
+  padding: 15px 35px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+.btn-green {
+  background-color: #8bc53f;
+  color: white;
+}
+
+.btn-green:hover {
+  background-color: #7ab22f;
+}
+
+.btn-pink {
+  background-color: #e75a7c;
+  color: white;
+}
+
+.btn-pink:hover {
+  background-color: #d14868;
+}
+
+/* PICKS SECTION */
+.picks-section {
+  background-color: whitesmoke;
+  padding: -10px 30px;
+}
+
+.picks-title {
+  text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.picks-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 40px;
+  padding-right: 40px;
+  gap: 40px;
+}
+
+.pick-card {
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 1;
+}
+
+.pick-image {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+
+.pick-content {
+  padding: 30px;
+  text-align: center;
+}
+
+.pick-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.pick-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.pick-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 25px;
+}
+.btn- {
+    margin-bottom: 10px;
+}
+
+/* RECENTLY ADDED SECTION */
+.recently-added-section {
+  background-color: whitesmoke;
+  padding: 60px 30px;
+}
+
+.recently-added-title {
+  text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.recently-added-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.recently-added-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 1; 
+}
+
+.recently-added-image {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.recently-added-content {
+  padding: 25px;
+  text-align: center;
+}
+
+.recently-added-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.recently-added-description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* POPULAR SECTION */
+.popular-section {
+  background-color: whitesmoke;
+  padding: 0px 30px;
+}
+
+.popular-title {
+  text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.popular-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.popular-card {
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 1; 
+}
+
+.popular-image {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.popular-content {
+  padding: 25px;
+  text-align: center;
+}
+
+.popular-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.popular-description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* BEST WORKOUTS SECTION */
+.best-workouts-section {
+  background-color: whitesmoke;
+  padding: 60px 30px;
+}
+
+.best-workouts-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.best-workout-card {
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 1; 
+}
+
+.best-workout-image {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.best-workout-content {
+  padding: 25px;
+  text-align: center;
+}
+
+.best-workout-category {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.best-workout-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.best-workout-description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* INSTRUCTORS BANNER SECTION */
+.instructors-banner-section {
+  background-color: whitesmoke;
+  padding: 0 30px 60px;
+}
+
+.instructors-banner {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  min-height: 350px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 80px;
+}
+
+.instructors-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.instructors-banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.instructors-banner-title {
+  font-size: 38px;
+  font-weight: bold;
+  color: white;
+  background-color: #8bc53f;
+  padding: 20px 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.instructors-banner-text {
+  font-size: 18px;
+  color: white;
+  padding-left: 10px;
+}
+
+/* STAY INSPIRED SECTION */
+.stay-inspired-section {
+  background-color: whitesmoke;
+  padding: 0 30px 80px;
+}
+
+.stay-inspired-banner {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 80px;
+}
+
+.stay-inspired-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.stay-inspired-content {
+  position: relative;
+  z-index: 2;
+}
+
+.stay-inspired-title {
+  font-size: 38px;
+  font-weight: bold;
+  color: white;
+  background-color: #8bc53f;
+  padding: 20px 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.stay-inspired-text {
+  font-size: 18px;
+  color: white;
+  padding-left: 10px;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #1a1a1a;
+  padding: 60px 30px 30px;
+  color: #999;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ccc;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-link {
+  color: #999;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #8bc53f;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  color: #999;
+  font-size: 24px;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #8bc53f;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid #333;
+}
+
+.footer-copyright {
+  font-size: 13px;
+  color: #666;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .section-title,
+  .picks-title,
+  .recently-added-title,
+  .popular-title {
+    font-size: 32px;
+  }
+
+  .picks-container,
+  .details-container {
+    grid-template-columns: 1fr;
+  }
+
+  .recently-added-container,
+  .popular-container,
+  .best-workouts-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 968px) {
+  .header-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-left {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tagline {
+    position: static;
+    transform: none;
+    margin: 10px 0;
+  }
+
+  .classes-container {
+    grid-template-columns: 1fr;
+  }
+
+  .recently-added-container,
+  .popular-container,
+  .best-workouts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .instructors-banner,
+  .stay-inspired-banner {
+    padding-left: 40px;
+  }
+
+  .instructors-banner-title,
+  .stay-inspired-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .section-title,
+  .picks-title,
+  .recently-added-title,
+  .popular-title {
+    font-size: 26px;
+  }
+
+  .nav-left {
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .class-card-title {
+    font-size: 36px;
+  }
+
+  .instructors-banner-title,
+  .stay-inspired-title {
+    font-size: 28px;
+    padding: 15px 25px;
+  }
+}
