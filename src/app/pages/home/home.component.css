@@ -192,18 +192,27 @@
 /* What Makes Us Different Section */
 .different-section {
   background-color: #1b1b1b;
-  padding: 80px 20px;
+  padding: 0px 20px 20px 20px; /* FIXED – negative padding removed */
 }
 
-.section-title {
+/* SECTION HEADING FULL RIGHT */
+.section-titledifferent {
+  width: 100%;
+   padding-right: 100px;
+  text-align: right !important;   /* Parent ko force right */
+}
+
+.section-title h2 {
   font-size: 70px;
   font-weight: 900;
-  text-align: center;
   color: white;
-  margin-bottom: 50px;
-  letter-spacing: 2px;
   text-transform: uppercase;
-  
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+
+  display: inline-block;        /* CENTER banana impossible ho jayega */
+  text-align: right !important; /* Force apply */
+  padding-right: 50px;
 }
 
 .features-grid {
@@ -212,7 +221,7 @@
   gap: 20px;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 50px; /* Added equal margins */
+  padding: 0 50px;
 }
 
 .feature-card {
@@ -240,16 +249,55 @@
   right: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
   padding: 30px 20px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
 }
 
+/* WRAPPER for Title + Text */
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease;
+
+  /* Initial bottom position */
+  transform: translateY(100px);
+}
+
+/* Hover — slide up */
+.feature-card:hover .overlay-content {
+  transform: translateY(-40px);
+}
+
+/* TITLE Styling */
 .feature-title {
-  font-size: 28px;
+  font-size: 25px;
   font-weight: 900;
   color: white;
   letter-spacing: 1px;
   text-transform: uppercase;
   line-height: 1.2;
+  margin-bottom: 10px;
+  text-align: center;
 }
+
+/* TEXT Styling */
+.feature-text {
+  color: white;
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  text-align: center;
+}
+
+/* TEXT Fade in */
+.feature-card:hover .feature-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* Scrolling Text Banner - Dual Direction */
 .scrolling-banner {
@@ -269,11 +317,11 @@
 }
 
 .scrolling-text-right {
-  animation: scrollRight 30s linear infinite;
+  animation: scrollRight 10s linear infinite;
 }
 
 .scrolling-text-left {
-  animation: scrollLeft 30s linear infinite;
+  animation: scrollLeft 10s linear infinite;
 }
 
 .scrolling-text span {
@@ -308,33 +356,40 @@
 /* Values Images Section */
 .values-images-section {
   background-color: #1b1b1b;
-  padding: 0 0 80px 0;
+  padding: 20px 0;
+  overflow: hidden;
 }
 
-.values-images {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Wrapper for scrolling row */
+.scrolling-images {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
-.values-imagessecond {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Inner row containing all images */
+.scrolling-images-row {
+  display: flex;
+  gap: 5px;               /* minimal gap */
+  width: max-content;      /* row width = all images width */
+  animation: scrollRight 90s linear infinite;
 }
 
+/* Second row scroll left */
+.scrolling-images-left .scrolling-images-row {
+  animation: scrollLeft 90s linear infinite;
+}
+
+/* Image container */
 .value-image-container {
-  aspect-ratio: 4/3;
-  width:100%;
-  object-fit:cover;
+  flex: 0 0 auto;
+  width: 50vw;            /* 2 images per screen */
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
+/* Image */
 .value-image {
   width: 100%;
   height: 100%;
@@ -345,6 +400,18 @@
 .value-image-container:hover .value-image {
   transform: scale(1.1);
 }
+
+/* Animations */
+@keyframes scrollRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 
 /* Offers Section */
 .offers-section {
@@ -427,43 +494,48 @@ position: relative;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
-  padding: 40px 30px;
-  color: white;
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;   /* ⭐ Everything goes to BOTTOM */
+  padding: 40px 30px;
   z-index: 1;
+
+  /* background already handled by your hover effect */
 }
 
+/* TITLE stays same */
 .offer-title {
   font-size: 25px;
   font-weight: 900;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: white;
   line-height: 1.1;
 }
 
+/* DESCRIPTION—remove flex-grow */
 .offer-description {
   font-size: 14px;
   line-height: 1.6;
-  margin-bottom: 20px;
-  font-family: Arial, sans-serif;
+  margin-bottom: 15px;
   color: #cccccc;
-  flex-grow: 1;
+  font-family: Arial, sans-serif;
+  /* ❌ flex-grow remove */
 }
 
+/* BUTTON stays same */
 .btn-primarynew {
   background-color: #e91e63;
   color: white;
-   max-height: 60px;
+  max-height: 60px;
   max-width: 200px;
   font-size: 15px;
   font-weight: 300;
   padding: 11px 20px;
 }
+
 
 .btn-primarynew:hover {
   background-color: #c2185b;
@@ -471,10 +543,33 @@ position: relative;
   box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
 }
 
+/* Overlay background initially transparent */
+.offer-content {
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0));
+  transition: background 0.5s ease; /* smooth fade */
+}
+
+/* On hover → black shadow for all cards */
+.offer-card:hover .offer-content {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+}
+
+.offer-cardfourth:hover .offer-content {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+}
+
+.offer-cardfifth:hover .offer-content {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+}
+
+.offer-cardsixth:hover .offer-content {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+}
+
 /* Reviews Section */
 .reviews-section {
   background-color: #1b1b1b;
-  padding: 90px 20px 50px 20px;
+  padding: 90px 20px 00px 20px;
 }
 
 .reviews-container {

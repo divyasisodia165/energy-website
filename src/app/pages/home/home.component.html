@@ -97,35 +97,60 @@
 </div>
 
   <!-- What Makes Us Different Section -->
-  <section class="different-section">
-    <h2 class="section-titledifferent">WHAT MAKES US <br> DIFFERENT</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <img [src]="'assets/images/feature1.jpg'" alt="Zero Attitudes" class="feature-image">
-        <div class="feature-overlay">
+<section class="different-section">
+  <h2 class="section-titledifferent">WHAT MAKES US <br> DIFFERENT</h2>
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <img [src]="'assets/images/feature1.jpg'" alt="Zero Attitudes" class="feature-image">
+      <div class="feature-overlay">
+        <div class="overlay-content">
           <h3 class="feature-title">ZERO ATTITUDES. ZERO INTIMIDATION.</h3>
-        </div>
-      </div>
-      <div class="feature-card">
-        <img [src]="'assets/images/feature2.jpg'" alt="Locally Owned" class="feature-image">
-        <div class="feature-overlay">
-          <h3 class="feature-title">LOCALLY OWNED</h3>
-        </div>
-      </div>
-      <div class="feature-card">
-        <img [src]="'assets/images/feature3.jpg'" alt="Positive Energie" class="feature-image">
-        <div class="feature-overlay">
-          <h3 class="feature-title">POSITIVE ÉNERGIE</h3>
-        </div>
-      </div>
-      <div class="feature-card">
-        <img [src]="'assets/images/feature4.jpg'" alt="Boutique Fitness" class="feature-image">
-        <div class="feature-overlay">
-          <h3 class="feature-title">BOUTIQUE FITNESS ON A BUDGET</h3>
+          <p class="feature-text">
+            No matter where you are on your fitness journey, our gyms are open to everyone. You’ll find no judgement or negativity here – just a fun, friendly and relaxed environment.
+          </p>
         </div>
       </div>
     </div>
-  </section>
+
+    <div class="feature-card">
+      <img [src]="'assets/images/feature2.jpg'" alt="Locally Owned" class="feature-image">
+      <div class="feature-overlay">
+        <div class="overlay-content">
+          <h3 class="feature-title">LOCALLY OWNED</h3>
+          <p class="feature-text">
+            We’re a market-leading fitness franchise group in the UK with over 80 gyms, most of which are locally owned. By combining the power of a national brand with the passion of a local fitness gym owner, énergie is able to offer a gym experience like no other!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <img [src]="'assets/images/feature3.jpg'" alt="Positive Energie" class="feature-image">
+      <div class="feature-overlay">
+        <div class="overlay-content">
+          <h3 class="feature-title">POSITIVE ÉNERGIE</h3>
+          <p class="feature-text">
+            Our gyms are inclusive spaces designed to inspire you in whatever you want to do – whether that’s pushing yourself solo on our top notch equipment or joining people just like you in one of our specialist classes. Either way, you’ll leave buzzing every time.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <img [src]="'assets/images/feature4.jpg'" alt="Boutique Fitness" class="feature-image">
+      <div class="feature-overlay">
+        <div class="overlay-content">
+          <h3 class="feature-title">BOUTIQUE FITNESS ON A BUDGET</h3>
+          <p class="feature-text">
+            When you join énergie Fitness you'll get access to everything you'd expect from a boutique gym for less – like top notch equipment, long opening hours, loads of classes and a community feel that's as supportive as you want it to be.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- Scrolling Text Banner (Dual Direction) -->
   <section class="scrolling-banner">
@@ -136,38 +161,122 @@
    
 
   <!-- Values Images -->
-  <section class="values-images-section">
-    <div class="values-images">
+  <!-- Values Images Section (Row 1) -->
+<section class="values-images-section">
+  <div class="scrolling-images scrolling-images-right">
+    <div class="scrolling-images-row">
       <div class="value-image-container">
-        <img [src]="'assets/images/trainer1.jpg'" alt="Trainer helping member" class="value-image">
+        <img [src]="'assets/images/trainer1.jpg'" class="value-image">
       </div>
       <div class="value-image-container">
-        <img [src]="'assets/images/trainer2.jpg'" alt="Woman training" class="value-image">
+        <img [src]="'assets/images/trainer2.jpg'" class="value-image">
       </div>
       <div class="value-image-container">
-        <img [src]="'assets/images/trainer3.jpg'" alt="Man at gym" class="value-image">
+        <img [src]="'assets/images/trainer3.jpg'" class="value-image">
       </div>
       <div class="value-image-container">
-        <img [src]="'assets/images/trainer4.jpg'" alt="Woman boxing" class="value-image">
+        <img [src]="'assets/images/trainer4.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer5.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer6.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer7.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer8.jpg'" class="value-image">
+      </div>
+
+      <!-- Duplicate for seamless scroll -->
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer1.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer2.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer3.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer4.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer5.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer6.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer7.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer8.jpg'" class="value-image">
       </div>
     </div>
-  </section>
-  <section class="values-images-section">
-    <div class="values-imagessecond">
+  </div>
+</section>
+
+<!-- Values Images Section (Row 2) -->
+<section class="values-images-section">
+  <div class="scrolling-images scrolling-images-left">
+    <div class="scrolling-images-row">
       <div class="value-image-container">
-        <img [src]="'assets/images/trainer1.jpg'" alt="Trainer helping member" class="value-image">
+        <img [src]="'assets/images/trainer1.jpg'" class="value-image">
       </div>
       <div class="value-image-container">
-        <img [src]="'assets/images/trainer2.jpg'" alt="Woman training" class="value-image">
+        <img [src]="'assets/images/trainer2.jpg'" class="value-image">
       </div>
       <div class="value-image-container">
-        <img [src]="'assets/images/trainer3.jpg'" alt="Man at gym" class="value-image">
+        <img [src]="'assets/images/trainer3.jpg'" class="value-image">
       </div>
       <div class="value-image-container">
-        <img [src]="'assets/images/trainer4.jpg'" alt="Woman boxing" class="value-image">
+        <img [src]="'assets/images/trainer4.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer5.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer6.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer7.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer8.jpg'" class="value-image">
+      </div>
+
+      <!-- Duplicate for seamless scroll -->
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer1.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer2.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer3.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer4.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer5.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer6.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer7.jpg'" class="value-image">
+      </div>
+      <div class="value-image-container">
+        <img [src]="'assets/images/trainer8.jpg'" class="value-image">
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
    <div class="scrolling-text scrolling-text-left">
       <span>DYNAMIC. WELCOMING. FRIENDLY. GOOD VIBES. COMMUNITY. PASSIONATE. ENGAGING. DOWN TO EARTH. </span>
       <span>DYNAMIC. WELCOMING. FRIENDLY. GOOD VIBES. COMMUNITY. PASSIONATE. ENGAGING. DOWN TO EARTH. </span>
