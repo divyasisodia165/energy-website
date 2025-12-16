@@ -107,6 +107,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
   font-size: 0.875rem;
   color: #737373;
   gap: 0.5rem;
@@ -142,9 +143,10 @@
   }
 
   .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+   flex-direction: column; 
+  justify-content: center; 
+  align-items: center;   
+  text-align: center;     
   }
 }
 

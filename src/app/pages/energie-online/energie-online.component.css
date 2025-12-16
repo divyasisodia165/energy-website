@@ -172,7 +172,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 0px;
 }
 
 .class-card {
@@ -231,7 +231,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 30px;
   margin-top: -20px;
 }
 
@@ -301,7 +301,7 @@ body {
   grid-template-columns: 1fr 1fr;
   padding-left: 40px;
   padding-right: 40px;
-  gap: 40px;
+  gap: 0px;
 }
 
 .pick-card {
@@ -309,13 +309,13 @@ body {
   flex-direction: column;
   justify-content: space-between; 
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 0px;
   overflow: hidden;
   flex: 1;
 }
 
 .pick-image {
-  height: 250px;
+  height: 400px;
   background-size: cover;
   background-position: center;
 }
@@ -341,7 +341,7 @@ body {
 }
 
 .pick-description {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
   color: #666;
   margin-bottom: 25px;
@@ -371,7 +371,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 0px;
 }
 
 .recently-added-card {
@@ -379,7 +379,7 @@ body {
   flex-direction: column;
   justify-content: space-between; 
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: px;
   overflow: hidden;
   flex: 1; 
 }
@@ -431,7 +431,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 0px;
 }
 
 .popular-card {
@@ -439,7 +439,7 @@ body {
   flex-direction: column;
   justify-content: space-between; 
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 0px;
   overflow: hidden;
   flex: 1; 
 }
@@ -481,7 +481,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 0px;
 }
 
 .best-workout-card {
@@ -489,7 +489,7 @@ body {
   flex-direction: column;
   justify-content: space-between; 
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 0px;
   overflow: hidden;
   flex: 1; 
 }

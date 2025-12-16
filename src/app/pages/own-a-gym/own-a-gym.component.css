@@ -432,9 +432,8 @@ body {
 
 .benefit-image {
   width: 100%;
-  height: auto;
   display: block;
-  min-height: 200px;
+  max-height: 230px;
 }
 
 /* SUPPORT SECTION */

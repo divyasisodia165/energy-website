@@ -62,6 +62,30 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
+      <!-- Mobile Navigation -->
+<nav class="nav-mobile" [class.open]="mobileMenuOpen">
+
+  <!-- Header main links -->
+  <a routerLink="/find-gym" class="nav-link" (click)="closeAllMenus()">FIND A GYM</a>
+
+  <!-- Explore links (flat list for mobile) -->
+  <a routerLink="/refer" class="nav-link" (click)="closeAllMenus()">REFER A FRIEND</a>
+  <a routerLink="/reviews" class="nav-link" (click)="closeAllMenus()">REVIEWS</a>
+  <a routerLink="/free-trial" class="nav-link" (click)="closeAllMenus()">FREE TRIAL</a>
+  <a routerLink="/own-a-gym" class="nav-link" (click)="closeAllMenus()">OWN A GYM</a>
+  <a routerLink="/blog" class="nav-link" (click)="closeAllMenus()">ENERGIE BLOG</a>
+  <a routerLink="/online" class="nav-link" (click)="closeAllMenus()">ENERGIE ONLINE</a>
+
+  <!-- Auth -->
+  <a routerLink="/login" class="nav-link" (click)="closeAllMenus()">LOGIN</a>
+
+  <!-- CTA -->
+  <a routerLink="/join-now" class="btn-join" (click)="closeAllMenus()">
+    <span class="btn-text">JOIN NOW</span>
+  </a>
+
+</nav>
+
 
     </div>
   </div>
