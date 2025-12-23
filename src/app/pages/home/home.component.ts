@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FindGymComponent } from '../find-gym/find-gym.component';
+import { RouterModule } from '@angular/router';
+
 
 
 interface Review {
@@ -11,9 +13,9 @@ interface Review {
 }
 
 @Component({
-  selector: 'app-home',
+   selector: 'app-home',
   standalone: true,
-  imports: [FindGymComponent],   // ⭐ ADD THIS
+  imports: [FindGymComponent, RouterModule],  // <-- add RouterModule here
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

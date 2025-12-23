@@ -9,8 +9,8 @@
     <div class="hero-content">
       <h1 class="hero-title">WELCOME TO ENERGIE FITNESS</h1>
       <div class="hero-buttons">
-        <button class="btn btn-primary" (click)="onJoinNow()">JOIN NOW</button>
-        <button class="btn btn-secondary" (click)="onFindGym()">FIND A GYM</button>
+        <button class="btn btn-primary" [routerLink]="['/find-gym']">JOIN NOW</button>
+        <button class="btn btn-secondary" [routerLink]="['/find-gym']">FIND A GYM</button>
       </div>
       <div class="trustpilot-badge">
         <div class="stars">
@@ -513,7 +513,10 @@
             boxing to body, with énergie OnDemand you can enjoy 25+ live weekly classes 
             and hundreds of on demand workouts directly from home.
           </p>
-          <button class="btn btn-primarynew" (click)="onLearnMore('digital-fitness')">FIND OUT MORE</button>
+          <button class="btn btn-primarynew" routerLink="/online">
+  FIND OUT MORE
+</button>
+
         </div>
       </div>
 
@@ -533,7 +536,8 @@
             personal trainers are highly qualified and experience so the help you 
             need to hit your next fitness goal is always on-hand.
           </p>
-          <button class="btn btn-primarynew" (click)="onLearnMore('personal-training')">SIGN UP TODAY</button>
+          <button class="btn btn-primarynew" [routerLink]="['/find-gym']">SIGN UP TODAY</button>
+
         </div>
       </div>
 
@@ -553,7 +557,8 @@
             time circuit or a relaxing evening class, you'll find plenty to keep you 
             busy throughout the week.
           </p>
-          <button class="btn btn-primarynew" (click)="onLearnMore('classes')">FIND OUT MORE</button>
+          <button class="btn btn-primarynew" [routerLink]="['/find-gym']">FIND OUT MORE</button>
+
         </div>
       </div>
 
@@ -573,7 +578,11 @@
             equipped with a range of versatile kit such as punch bags, TRX, and 
             slam balls.
           </p>
-          <button class="btn btn-primarynew" (click)="onLearnMore('yard')">THE YARD</button>
+         <a class="btn btn-primarynew no-underline" [routerLink]="['/yard']">THE YARD</a>
+
+
+
+
         </div>
       </div>
 
@@ -594,7 +603,8 @@
             just beginning your health journey, our blog is here to inspire, motivate, 
             and guide you toward achieving your goals!
           </p>
-          <button class="btn btn-primarynew" (click)="onLearnMore('blog')">CHECK IT OUT</button>
+         <button class="btn btn-primarynew" [routerLink]="['/blog']">CHECK IT OUT</button>
+
         </div>
       </div>
 

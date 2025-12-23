@@ -1,18 +1,22 @@
 import { Routes } from '@angular/router';
 
 // Regular non-standalone components
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FindGymComponent } from './pages/find-gym/find-gym.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 // Standalone components (loaded lazily)
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'about-us', component: AboutUsComponent },
   { path: 'find-gym', component: FindGymComponent },
   { path: 'explore', component: ExploreComponent },
   { path: 'login', component: LoginComponent },
   { path: 'join-now', component: FindGymComponent },
+  { path: 'contact', component: ContactComponent },
 
   // Standalone component routes using loadComponent
   {
@@ -53,4 +57,9 @@ export const routes: Routes = [
         (m) => m.EnergieOnline
       ),
   },
+  {
+  path: 'yard',
+  loadComponent: () =>
+    import('./pages/yard/yard.component').then(m => m.YardComponent),
+}
 ];

@@ -1,0 +1,395 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #1b1b1b;
+}
+.yard-page {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #1b1b1b;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 543px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Intro Section */
+.intro-section {
+  padding: 80px 0;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.intro-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.intro-text .availability {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+.intro-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Video Section */
+.video-section {
+  padding: 60px 0;
+  background-color: #1b1b1b;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Classes Section */
+.classes-section {
+  padding: 0px 0;
+  background-color: #1b1b1b;
+}
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.classes-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.classes-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+.classes-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.btn {
+ padding: 12px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+  position: relative;
+  transform: skewX(-10deg);
+  overflow: hidden;
+  max-height: 80px;
+  max-width: 200px;
+}
+
+.btn-primary {
+  background-color: #ff6b9d;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+   background-color: #c2185b;
+  transform: skewX(-10deg) translateY(-2px);
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+}
+
+.btn-secondary {
+  background-color: #a4d65e;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #7cb342;
+  transform: skewX(-10deg) translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 195, 74, 0.4);
+}
+
+/* Background colors for sections */
+.intro-section {
+  background-color: #1b1b1b;
+}
+
+
+/* Scrolling Text Banner - Dual Direction */
+.scrolling-banner {
+  background: #1b1b1b;
+  padding: 30px 0;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  display: flex;
+  white-space: nowrap;
+  margin-bottom: 30px;
+}
+
+.scrolling-text:last-child {
+  margin-bottom: 0;
+}
+
+.scrolling-text-right {
+  animation: scrollRight 10s linear infinite;
+}
+
+.scrolling-text-left {
+  animation: scrollLeft 10s linear infinite;
+}
+
+.scrolling-text span {
+  font-size: 64px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  text-stroke: 2px #ffffff;
+  padding: 0 50px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Values Images Section */
+.values-images-section {
+  background-color: #1b1b1b;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+/* Wrapper for scrolling row */
+.scrolling-images {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Inner row containing all images */
+.scrolling-images-row {
+  display: flex;
+  gap: 5px;               /* minimal gap */
+  width: max-content;      /* row width = all images width */
+  animation: scrollRight 90s linear infinite;
+}
+
+/* Second row scroll left */
+.scrolling-images-left .scrolling-images-row {
+  animation: scrollLeft 90s linear infinite;
+}
+
+/* Image container */
+.value-image-container {
+  flex: 0 0 auto;
+  width: 50vw;            /* 2 images per screen */
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Image */
+.value-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.value-image-container:hover .value-image {
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes scrollRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .intro-grid,
+  .classes-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .intro-section,
+  .classes-section {
+    padding: 50px 0;
+  }
+
+  .video-section {
+    padding: 40px 0;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    height: 350px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .intro-text h2,
+  .classes-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text p,
+  .classes-text p {
+    font-size: 0.95rem;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+}

@@ -566,6 +566,11 @@ position: relative;
   background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
 }
 
+.no-underline {
+  text-decoration: none;
+}
+
+
 /* Reviews Section */
 .reviews-section {
   background-color: #1b1b1b;
