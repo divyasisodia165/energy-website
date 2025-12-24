@@ -14,7 +14,7 @@ body {
 
 /* HEADER STYLES */
 .header {
-  background-color: #f5f0e8;
+  background-color: white;
   padding: 24.5px 0;
   position: sticky;
   top: 0;
@@ -35,6 +35,32 @@ body {
   height: 40px;
   width: auto;
 }
+
+.logo {
+  font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 3px; 
+}
+
+/* énergie text */
+.logo-energie {
+  color: #2b2b2b;   /* dark black/grey */
+  letter-spacing: 1.5px;
+  font-style: italic;
+}
+
+/* Fitness text */
+.logo-fitness {
+  color: #6bb63f;   /* green shade */
+  font-weight: 540;
+  font-family: 'Poppins', 'Montserrat';
+  font-style: italic;
+   letter-spacing: 1.5px;
+}
+
 
 .nav {
   display: flex;
@@ -174,7 +200,7 @@ body {
 
 /* INVESTMENT SECTION */
 .investment-section {
-  background-color: #f5f0e8;
+  background-color: white;
    padding: 30px 40px 20px 40px;
 
 }
@@ -334,7 +360,7 @@ body {
 
 /* GOLD STANDARD SECTION */
 .gold-standard-section {
-  background-color: #f5f0e8;
+  background-color: white;
   padding: 60px 40px;
 }
 
@@ -370,7 +396,7 @@ body {
 
 /* AWARDS SECTION */
 .awards-section {
-  background-color: #f5f0e8;
+  background-color: white;
   padding: 40px 30px 80px;
 }
 
@@ -380,13 +406,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
 .award-badge {
   height: 100px;
   width: auto;
+  min-height: 150px;
 }
 
 /* BENEFITS SECTION */
@@ -475,7 +502,7 @@ body {
 
 /* TESTIMONIAL JOSH SECTION */
 .testimonial-section-josh {
-  background-color: #f5f0e8;
+  background-color: white;
   padding: 30px 40px;
 }
 

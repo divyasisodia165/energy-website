@@ -488,6 +488,18 @@ position: relative;
   transform: scale(1.05);
 }
 
+.offer-cardfourth:hover .offer-image {
+  transform: scale(1.05);
+}
+
+.offer-cardfifth:hover .offer-image {
+  transform: scale(1.05);
+}
+
+.offer-cardsixth:hover .offer-image {
+  transform: scale(1.05);
+}
+
 .offer-content {
   position: absolute;
   top: 0;
