@@ -1,0 +1,387 @@
+/* franchise-support.component.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.franchise-support-container {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  color: #333;
+  background-color: white;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #7cb342 0%, #558b2f 100%);
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.hero-title {
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Introduction Section */
+.intro-section {
+  background-color: white;
+  padding: 80px 40px;
+}
+
+.intro-content {
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #4a4a4a;
+  font-weight: 400;
+}
+
+.intro-text strong {
+  font-weight: 700;
+}
+
+/* What's Included Section */
+.whats-included-section {
+  background-color: white;
+  padding: 30px 225px 100px 225px;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #7cb342;
+  margin-bottom: 80px;
+  text-transform: none;
+}
+
+/* Support Items */
+.support-items {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.support-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Right Aligned Items (Image on Right) */
+.support-item.right-align {
+  grid-template-columns: 1fr auto;
+}
+
+.support-item.right-align .item-content {
+  text-align: right;
+  padding-right: 20px;
+}
+
+/* Left Aligned Items (Image on Left) */
+.support-item.left-align {
+  grid-template-columns: auto 1fr;
+}
+
+.support-item.left-align .item-content {
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* Item Content */
+.item-content {
+  max-width: 600px;
+}
+
+.item-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.item-description {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #4a4a4a;
+}
+
+/* Item Images */
+.item-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Call to Action Section */
+.cta-section {
+  background-color: whitesmoke;
+  padding: 80px 40px 120px 40px;
+  text-align: center;
+}
+
+.cta-heading {
+  font-size: 42px;
+  font-weight: bold;
+  color: #7cb342;
+  margin-bottom: 50px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 14px 14px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+  position: relative;
+  transform: skewX(-10deg);
+  overflow: hidden;
+  max-height: 80px;
+  max-width: 340px;
+}
+
+.pink-btn {
+  background-color: #e91e63;
+  color: white;
+}
+
+.pink-btn:hover {
+  background-color: #c2185b;
+  transform: skewX(-10deg) translateY(-2px);
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+}
+
+.green-btn {
+  background-color: #8bc34a;
+  color: white;
+}
+
+.green-btn:hover {
+  background-color: #7cb342;
+  transform: skewX(-10deg) translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 195, 74, 0.4);
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.back-to-top-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #4a4a4a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top-icon span {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.back-to-top:hover .back-to-top-icon {
+  background-color: #333;
+  transform: translateY(-3px);
+}
+
+.back-to-top-text {
+  font-size: 11px;
+  font-weight: bold;
+  color: #4a4a4a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .support-item,
+  .support-item.right-align,
+  .support-item.left-align {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center !important;
+    justify-items: center;
+  }
+
+  .support-item.right-align .item-content,
+  .support-item.left-align .item-content {
+    text-align: center;
+    padding: 0;
+    max-width: 600px;
+  }
+
+  .item-image {
+    order: -1;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .section-heading,
+  .cta-heading {
+    font-size: 36px;
+  }
+
+  .intro-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 20px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .intro-section {
+    padding: 60px 20px;
+  }
+
+  .intro-text {
+    font-size: 16px;
+  }
+
+  .whats-included-section {
+    padding: 40px 20px 80px 20px;
+  }
+
+  .section-heading,
+  .cta-heading {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .support-item {
+    margin-bottom: 50px;
+  }
+
+  .item-title {
+    font-size: 20px;
+  }
+
+  .item-description {
+    font-size: 15px;
+  }
+
+  .item-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .cta-section {
+    padding: 60px 20px 100px 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 350px;
+    font-size: 16px;
+    padding: 18px 40px;
+  }
+
+  .back-to-top {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .back-to-top-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .back-to-top-icon span {
+    font-size: 20px;
+  }
+
+  .back-to-top-text {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .intro-text {
+    font-size: 15px;
+  }
+
+  .section-heading,
+  .cta-heading {
+    font-size: 26px;
+  }
+
+  .item-title {
+    font-size: 18px;
+  }
+
+  .item-description {
+    font-size: 14px;
+  }
+
+  .cta-btn {
+    font-size: 15px;
+    padding: 16px 30px;
+    letter-spacing: 1px;
+  }
+}

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 export interface Review {
   id: number;
@@ -14,6 +16,10 @@ export interface Review {
 @Component({
   selector: 'app-reviews',
   templateUrl: './reviews.component.html',
+   imports: [
+    CommonModule,
+    RouterModule   // 👈 THIS FIXES routerLink ERROR
+  ],
   styleUrls: ['./reviews.component.css']
 })
 export class Reviews {

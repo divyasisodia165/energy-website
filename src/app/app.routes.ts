@@ -7,6 +7,8 @@ import { FindGymComponent } from './pages/find-gym/find-gym.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { RequestInfoComponent } from './pages/request-info/request-info.component';
+import { FranchiseSupportComponent } from './pages/franchise-support/franchise-support.component';
 
 // Standalone components (loaded lazily)
 export const routes: Routes = [
@@ -17,6 +19,14 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'join-now', component: FindGymComponent },
   { path: 'contact', component: ContactComponent },
+    {
+    path: 'request-info',
+    component: RequestInfoComponent
+  },
+  {
+    path: 'franchise-support',
+    component: FranchiseSupportComponent
+  },
 
   // Standalone component routes using loadComponent
   {
@@ -41,7 +51,8 @@ export const routes: Routes = [
   {
     path: 'own-a-gym',
     loadComponent: () =>
-      import('./pages/own-a-gym/own-a-gym.component').then((m) => m.OwnAGym),
+  import('./pages/own-a-gym/own-a-gym.component').then(m => m.OwnAGymComponent),
+
   },
   {
     path: 'blog',
@@ -62,4 +73,5 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./pages/yard/yard.component').then(m => m.YardComponent),
 }
+
 ];

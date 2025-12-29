@@ -1,0 +1,181 @@
+<!-- request-info.component.html -->
+<div class="franchise-request-container">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1 class="hero-title">REQUEST A FRANCHISE INFORMATION PACK</h1>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content-section">
+    <div class="content-wrapper">
+      <!-- Left Side - Information -->
+      <div class="info-side">
+        <h2 class="section-title">
+          FIND OUT MORE ABOUT THE<br>
+          ÉNERGIE FITNESS FRANCHISE<br>
+          OPPORTUNITY BY REQUESTING<br>
+          OUR FREE INFORMATION PACK.
+        </h2>
+
+        <h3 class="download-title">Download the brochure and learn:</h3>
+<ul class="benefits-list">
+  <li>
+    <span class="tick">✓</span>
+    <span>What makes énergie the number #1 gym franchise in the UK</span>
+  </li>
+  <li>
+    <span class="tick">✓</span>
+    <span>How budget fitness is driving the UK health and fitness market</span>
+  </li>
+  <li>
+    <span class="tick">✓</span>
+    <span>Our signature concepts: the YARD and Club Hosts</span>
+  </li>
+  <li>
+    <span class="tick">✓</span>
+    <span>All about our comprehensive franchise support package</span>
+  </li>
+</ul>
+
+        <div class="gym-image">
+          <img src="https://res.cloudinary.com/dwmq5hv5d/image/upload/f_auto,q_auto,w_900/request_oftnm9.png" alt="Énergie Fitness Gym Opening">
+        </div>
+      </div>
+
+      <!-- Right Side - Form -->
+      <div class="form-side">
+        <div class="form-container">
+          <p class="form-intro">
+            Get in touch to find out more about franchising opportunities with énergie Fitness
+          </p>
+
+          <form [formGroup]="franchiseForm" (ngSubmit)="onSubmit()">
+            <!-- First Name -->
+            <div class="form-field">
+              <label for="firstName">First Name *</label>
+              <input 
+                type="text" 
+                id="firstName" 
+                formControlName="firstName"
+                class="input-field">
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-field">
+              <label for="lastName">Last Name *</label>
+              <input 
+        
+                type="text" 
+                id="lastName" 
+                formControlName="lastName"
+                class="input-field">
+            </div>
+
+            <!-- Email -->
+            <div class="form-field">
+              <label for="email">Email *</label>
+              <input 
+                type="email" 
+                id="email" 
+                formControlName="email"
+                class="input-field">
+            </div>
+
+            <!-- Contact Number -->
+            <div class="form-field">
+              <label for="contactNumber">Contact number *</label>
+              <input 
+                type="tel" 
+                id="contactNumber" 
+                formControlName="contactNumber"
+                class="input-field">
+            </div>
+
+            <!-- Description -->
+            <div class="form-field">
+              <label for="description">
+                So that we can provide you with more tailored information, which of these options best describes you? *
+              </label>
+              <select 
+                id="description" 
+                formControlName="description"
+                class="select-field">
+                <option value="">Please select one</option>
+                <option value="existing-business">Existing Business Owner</option>
+                <option value="entrepreneur">Aspiring Entrepreneur</option>
+                <option value="investor">Investor</option>
+                <option value="fitness-professional">Fitness Professional</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Funding Level -->
+            <div class="form-field">
+              <label for="fundingLevel">
+                What level of funding do you have available for this opportunity? *
+              </label>
+              <select 
+                id="fundingLevel" 
+                formControlName="fundingLevel"
+                class="select-field">
+                <option value="">Please select one</option>
+                <option value="under-50k">Under £50,000</option>
+                <option value="50k-100k">£50,000 - £100,000</option>
+                <option value="100k-250k">£100,000 - £250,000</option>
+                <option value="250k-500k">£250,000 - £500,000</option>
+                <option value="over-500k">Over £500,000</option>
+              </select>
+            </div>
+
+            <!-- City -->
+            <div class="form-field">
+              <label for="city">City</label>
+              <input 
+                type="text" 
+                id="city" 
+                formControlName="city"
+                class="input-field">
+            </div>
+
+            <!-- Territory -->
+            <div class="form-field">
+              <label for="territory">Please select your territory</label>
+              <select 
+                id="territory" 
+                formControlName="territory"
+                class="select-field">
+                <option value="">Please select one</option>
+                <option value="england">England</option>
+                <option value="scotland">Scotland</option>
+                <option value="wales">Wales</option>
+                <option value="northern-ireland">Northern Ireland</option>
+                <option value="international">International</option>
+              </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn" [disabled]="franchiseForm.invalid || isSubmitting">
+              <span *ngIf="!isSubmitting">FIND OUT MORE</span>
+              <span *ngIf="isSubmitting">SUBMITTING...</span>
+            </button>
+
+            <!-- Privacy Policy -->
+            <p class="privacy-text">
+              By submitting this form you agree to our 
+              <a href="#" class="privacy-link">Privacy and Cookies Policy</a> 
+              and consent to receiving marketing communications about énergie Fitness franchise via your input contact method(s). You can opt out at any time.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" (click)="scrollToTop()">
+    <div class="back-to-top-icon">
+      <span>▲</span>
+    </div>
+    <span class="back-to-top-text">BACK TO TOP</span>
+  </div>
+</div>
