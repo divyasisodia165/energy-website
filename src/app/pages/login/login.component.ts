@@ -11,24 +11,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginComponent {
   
-  selectedCountry: string = 'United Kingdom';
+  selectedCountry: string = 'India';
   selectedLocation: string = '';
   showLoginForm: boolean = false;
 
   countries: string[] = [
-    'United Kingdom',
-    'United States',
-    'Canada',
-    'Australia',
     'India'
   ];
 
   locations: string[] = [
-    'London',
-    'Manchester',
-    'Birmingham',
-    'Leeds',
-    'Glasgow'
+    'Mumbai',
+    'Indore'
   ];
 
   onCountryChange(): void {

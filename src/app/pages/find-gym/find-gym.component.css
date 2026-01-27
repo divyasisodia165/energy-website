@@ -84,7 +84,7 @@
 }
 
 .search-input:focus {
-  border-color: #7ed957;
+  border-color: #8bc34a;
 }
 
 .location-btn {
@@ -118,7 +118,7 @@
 
 .tab-btn {
   padding: 14px;
-  background-color: #8bc34a;
+  background-color: black;
   border: none;
   color: #fff;
   font-size: 14px;
@@ -131,17 +131,17 @@
 }
 
 .tab-btn.active {
-  background-color: #2a2a2a;
+  background-color: #8bc34a;
   color: #fff;
 }
 
 .tab-btn.worldwide.active {
-  background-color: #7ed957;
-  color: #000;
+  background-color: #8bc34a;
+  color: #fff;
 }
 
 .tab-btn:hover {
-  background-color: #2a2a2a;
+  background-color: #8bc34a;
 }
 
 /* Country Title */
@@ -194,11 +194,11 @@
 }
 
 .gym-item:hover .gym-name {
-  color: #7ed957;
+  color: #8bc34a;
 }
 
 .gym-item:hover .arrow-icon {
-  color: #7ed957;
+  color: #8bc34a;
   transform: translateX(4px);
 }
 

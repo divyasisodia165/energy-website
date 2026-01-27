@@ -57,13 +57,13 @@
       </div>
 
       <!-- Country Title -->
-      <h2 class="country-title">INDIA</h2>
+      <h2 class="country-title">{{ selectedTab }}</h2>
 
       <!-- Gym List -->
       <div class="gym-list">
         <div 
           class="gym-item"
-          *ngFor="let gym of indiaGyms"
+          *ngFor="let gym of selectedTab === 'INDIA' ? indiaGyms : worldwideGyms"
           (click)="selectGym(gym)">
           <span class="gym-name">{{ gym.name }}</span>
           <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">

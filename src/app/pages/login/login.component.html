@@ -1,4 +1,3 @@
-<!-- login.component.html -->
 <div class="login-container">
   <div class="login-content">
     <h1 class="login-title">LOGIN</h1>
@@ -29,10 +28,9 @@
       </select>
     </div>
 
-    <!-- EMAIL & PASSWORD (Visible only after location selection) -->
+    <!-- EMAIL & PASSWORD -->
     <div *ngIf="showLoginForm" class="form-fade">
 
-      <!-- EMAIL -->
       <div class="form-group">
         <input 
           type="email"
@@ -41,7 +39,6 @@
           [(ngModel)]="email">
       </div>
 
-      <!-- PASSWORD -->
       <div class="form-group">
         <input 
           type="password"
@@ -50,10 +47,8 @@
           [(ngModel)]="password">
       </div>
 
-      <!-- FORGOT PASSWORD -->
       <p class="forgot-text">Forgot your password ?</p>
 
-      <!-- LOGIN BUTTON -->
       <button class="btn-login">LOGIN</button>
     </div>
 

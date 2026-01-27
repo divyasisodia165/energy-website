@@ -24,24 +24,31 @@ export class FindGymComponent implements OnInit {
   mapUrl: SafeResourceUrl = '';
   
   gymLocations = [
-    { lat: 28.6139, lng: 77.2090, count: 25, address: 'Delhi, India' },
     { lat: 19.0760, lng: 72.8777, count: 35, address: 'Mumbai, India' },
-    { lat: 12.9716, lng: 77.5946, count: 28, address: 'Bangalore, India' }
+    { lat: 22.7196, lng: 75.8577, count: 20, address: 'Indore, India' }
   ];
 
   indiaGyms: Gym[] = [
-    { name: 'CONNAUGHT PLACE GYM', location: 'Connaught Place, New Delhi, India' },
-    { name: 'SOUTH EXTENSION GYM', location: 'South Extension, New Delhi, India' },
-    { name: 'KAROL BAGH GYM', location: 'Karol Bagh, New Delhi, India' },
-    { name: 'ROHINI GYM', location: 'Rohini, New Delhi, India' },
-    { name: 'DWARKA GYM', location: 'Dwarka, New Delhi, India' },
-    { name: 'NOIDA SECTOR 18 GYM', location: 'Sector 18, Noida, Uttar Pradesh, India' },
-    { name: 'GURGAON CYBER CITY GYM', location: 'Cyber City, Gurgaon, Haryana, India' },
-    { name: 'ANDHERI GYM', location: 'Andheri, Mumbai, Maharashtra, India' },
-    { name: 'BANDRA GYM', location: 'Bandra, Mumbai, Maharashtra, India' },
-    { name: 'KORAMANGALA GYM', location: 'Koramangala, Bangalore, Karnataka, India' },
-    { name: 'INDIRANAGAR GYM', location: 'Indiranagar, Bangalore, Karnataka, India' },
-    { name: 'WHITEFIELD GYM', location: 'Whitefield, Bangalore, Karnataka, India' }
+    { name: 'MUMBAI GYM', location: 'Mumbai, Maharashtra, India' },
+    { name: 'INDORE GYM', location: 'Indore, Madhya Pradesh, India' }
+  ];
+
+  worldwideGyms: Gym[] = [
+    { name: 'BALBRIGGAN GYM', location: 'Balbriggan, Ireland' },
+    { name: 'BALLINCOLLIG GYM', location: 'Ballincollig, Cork, Ireland' },
+    { name: 'CARLOW GYM', location: 'Carlow, Ireland' },
+    { name: 'CITYWEST GYM', location: 'Citywest, Dublin, Ireland' },
+    { name: 'CLAREHALL GYM', location: 'Clarehall, Dublin, Ireland' },
+    { name: 'DROGHEDA GYM', location: 'Drogheda, Louth, Ireland' },
+    { name: 'DUBLIN 8 GYM', location: 'Dublin 8, Ireland' },
+    { name: 'DUN LAOGHAIRE GYM', location: 'Dun Laoghaire, Dublin, Ireland' },
+    { name: 'DUNDALK GYM', location: 'Dundalk, Louth, Ireland' },
+    { name: 'GALWAY GYM', location: 'Galway, Ireland' },
+    { name: 'LIMERICK GYM', location: 'Limerick, Ireland' },
+    { name: 'MIDLETON GYM', location: 'Midleton, Cork, Ireland' },
+    { name: 'MULLINGAR GYM', location: 'Mullingar, Westmeath, Ireland' },
+    { name: 'SALTHILL GYM', location: 'Salthill, Galway, Ireland' },
+    { name: 'STEPASIDE GYM', location: 'Stepaside, Dublin, Ireland' }
   ];
 
   constructor(private sanitizer: DomSanitizer) {}
@@ -51,8 +58,7 @@ export class FindGymComponent implements OnInit {
   }
 
   initializeMap(): void {
-    const defaultLocation = 'India';
-    this.updateMapUrl(defaultLocation);
+    this.updateMapUrl('India');
   }
 
   updateMapUrl(location: string): void {
@@ -62,7 +68,7 @@ export class FindGymComponent implements OnInit {
 
   searchByPostcode(): void {
     if (this.searchPostcode.trim()) {
-      this.updateMapUrl(this.searchPostcode + ', India');
+      this.updateMapUrl(this.searchPostcode);
     }
   }
 
@@ -74,7 +80,7 @@ export class FindGymComponent implements OnInit {
           const lng = position.coords.longitude;
           this.updateMapUrl(`${lat},${lng}`);
         },
-        (error) => {
+        () => {
           alert('Unable to retrieve your location');
         }
       );
@@ -89,10 +95,11 @@ export class FindGymComponent implements OnInit {
 
   selectTab(tab: string): void {
     this.selectedTab = tab;
+
     if (tab === 'INDIA') {
       this.updateMapUrl('India');
     } else if (tab === 'WORLDWIDE') {
-      this.updateMapUrl('World');
+      this.updateMapUrl('Ireland');
     }
   }
 }
