@@ -300,12 +300,12 @@
 
 .reviewer-name {
   font-weight: 600;
-  color: #333;
+  color: #dcdce6;
 }
 
 .review-date {
   font-weight: 400;
-  color: #777;
+  color: #dcdce6;
 }
 
 /* Review Title */
@@ -319,9 +319,9 @@
 
 /* Review Content */
 .review-content {
-  font-size: 0.9375rem;
+  font-size: 0.79rem;
   line-height: 1.6;
-  color: #4a4a4a;
+  color: #dcdce6;
   margin: 0 0 12px 0;
 }
 
@@ -373,7 +373,7 @@
 
 .reply-date {
   font-size: 0.8125rem;
-  color: #777;
+  color: #dcdce6;
   margin-bottom: 10px;
 }
 
