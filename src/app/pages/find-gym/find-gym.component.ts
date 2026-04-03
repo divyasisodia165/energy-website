@@ -33,8 +33,8 @@ currentIndex = 0;
   ];
 
   indiaGyms: Gym[] = [
-    { name: 'MUMBAI GYM', location: 'Mumbai, Maharashtra, India' },
-    { name: 'INDORE GYM', location: 'Indore, Madhya Pradesh, India' }
+    { name: 'MUMBAI ', location: 'Mumbai, Maharashtra, India' },
+    { name: 'INDORE ', location: 'Indore, Madhya Pradesh, India' }
   ];
 
   worldwideGyms: Gym[] = [

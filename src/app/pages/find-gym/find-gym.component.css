@@ -214,6 +214,14 @@
   transition: all 0.3s;
 }
 
+.coming-soon {
+  margin-top: 10px;
+  font-weight: 600;
+  font-style: italic;
+  color: white;
+  font-size: 14px;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .content-wrapper {
